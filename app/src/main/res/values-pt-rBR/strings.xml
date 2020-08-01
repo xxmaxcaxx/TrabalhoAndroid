@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trabalho de conclusão Android</string>
+    <string name="Name">Nome</string>
+    <string name="Insert">Inserir</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Enter_name">Digite o nome:</string>
+    <string name="Edit">Editar</string>
+    <string name="Name_empty">Nome está vazio.</string>
+</resources>

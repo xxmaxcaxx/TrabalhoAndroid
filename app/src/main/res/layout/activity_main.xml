@@ -9,7 +9,7 @@
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inserir"
+        android:text="@string/Insert"
         app:layout_constraintTop_toTopOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

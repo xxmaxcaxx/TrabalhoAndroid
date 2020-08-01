@@ -3,6 +3,7 @@ package com.example.trabalhodeconclusoandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.StringRes
 import com.example.trabalhodeconclusoandroid.db.DatabaseHandler
 import com.example.trabalhodeconclusoandroid.model.Pessoa
 import kotlinx.android.synthetic.main.activity_name.*
@@ -21,11 +22,11 @@ class NameActivity : AppCompatActivity() {
         if(edit){
             val pessoa = databaseHandler.getPessoa(position)
             etNome.setText(pessoa.nome)
-            btnInsertNome.setText("Editar")
+            btnInsertNome.text = getString(R.string.Edit)
         }
         btnInsertNome.setOnClickListener {
             if(etNome.text.toString() == ""){
-                Toast.makeText(this,"Nome está vazio.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.Name_empty),Toast.LENGTH_SHORT).show()
             }
             else {
                 if(edit){

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Trabalho de conclusão Android</string>
+    <string name="Name">Name</string>
+    <string name="Insert">Insert</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Enter_name">Enter name:</string>
+    <string name="Edit">Edit</string>
+    <string name="Name_empty">The name is empty.</string>
 </resources>

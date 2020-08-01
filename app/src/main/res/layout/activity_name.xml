@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Digite o nome:"
+            android:text="@string/Enter_name"
             android:textSize="18sp"
             android:gravity="center"/>
         <EditText
@@ -26,12 +26,12 @@
             android:id="@+id/btnInsertNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inserir"
+            android:text="@string/Insert"
             android:layout_marginTop="10dp"/>
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancelar"/>
+            android:text="@string/Cancel"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
