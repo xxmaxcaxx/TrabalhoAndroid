@@ -7,4 +7,12 @@
     <string name="Enter_name">Digite o nome:</string>
     <string name="Edit">Editar</string>
     <string name="Name_empty">Nome está vazio.</string>
+    <string name="phone">Celular</string>
+    <string name="email">Email</string>
+    <string name="DOB">Aniversario dd/mm/yyyy</string>
+    <string name="short_description">Breve descrição</string>
+    <string name="AddRecord">Adicionar foto</string>
+    <string name="PickImageFrom">"Escolher Imagem da "</string>
+    <string name="Camera">Camera</string>
+    <string name="Gallery">Galeria</string>
 </resources>

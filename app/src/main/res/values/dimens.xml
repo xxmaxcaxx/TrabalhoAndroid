@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="MarginRecordBtn">10dp</dimen>
+
+    <dimen name="CircularImageHeight">140dp</dimen>
+    <dimen name="CircularImageWidth">140dp</dimen>
+    <dimen name="CircularImageMarginTop">15dp</dimen>
+    <dimen name="CircularImageBorderWidth">1dp</dimen>
+
+    <dimen name="etNameMarginTop">4dp</dimen>
+    <dimen name="etNameMarginEnd">15dp</dimen>
+    <dimen name="etNameMarginStart">15dp</dimen>
+    <dimen name="etNamePadding">10dp</dimen>
+    <dimen name="RectRadius">3dp</dimen>
+    <dimen name="RectWidth">1dp</dimen>
+</resources>

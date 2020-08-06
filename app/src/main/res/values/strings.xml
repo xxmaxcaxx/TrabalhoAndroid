@@ -6,4 +6,12 @@
     <string name="Enter_name">Enter name:</string>
     <string name="Edit">Edit</string>
     <string name="Name_empty">The name is empty.</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="DOB">DOB dd/mm/yyyy</string>
+    <string name="short_description">Short Description</string>
+    <string name="AddRecord">Add Record</string>
+    <string name="PickImageFrom">Pick Image From</string>
+    <string name="Camera">Camera</string>
+    <string name="Gallery">Gallery</string>
 </resources>
