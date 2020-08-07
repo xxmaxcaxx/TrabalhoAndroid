@@ -12,11 +12,11 @@ object Constants {
     const val C_PHONE = "PHONE"
     const val C_EMAIL = "EMAIL"
     const val C_DOB = "DOB"
-    const val C_ADDED_TIMESTAMP = "ADDED_TIMESTAMP"
+    const val C_ADDED_TIMESTAMP = "ADDED_TIME_STAMP"
     const val C_UPDATE_TIMESTAMP = "UPDATE_TIMESTAMP"
 
     const val CREATE_TABLE = (
-            "CREATE_TABLE " + TABLE_NAME + "("
+            "CREATE_TABLE" + TABLE_NAME + "("
             + C_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
             + C_NAME + "TEXT,"
             + C_IMAGE + "TEXT,"
@@ -26,6 +26,6 @@ object Constants {
             + C_DOB + "TEXT,"
             + C_ADDED_TIMESTAMP + "TEXT,"
             + C_UPDATE_TIMESTAMP + "TEXT,"
-            + "),"
+            + ")"
             )
 }

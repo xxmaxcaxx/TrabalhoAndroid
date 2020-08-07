@@ -79,7 +79,8 @@ class AddUpdateRecordActivity : AppCompatActivity() {
         bio = ""+bioEt.text.toString().trim()
 
         val timestamp = System.currentTimeMillis()
-        val id = dbHelper.insertRecord(""+name,
+        val id = dbHelper.insertRecord(
+            ""+name,
             ""+imageUri,
             ""+bio,
             ""+phone,
