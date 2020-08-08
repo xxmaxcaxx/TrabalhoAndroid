@@ -90,6 +90,7 @@ class AddUpdateRecordActivity : AppCompatActivity() {
             ""+timestamp
         )
         Toast.makeText(this, "Record added against ID $id", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun imagePickDialog() {
