@@ -66,7 +66,7 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP)),
+                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
 
                 )
 
@@ -81,7 +81,7 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
     fun searchRecords(query:String):ArrayList<ModelRecord>{
         val recordList = ArrayList<ModelRecord>()
 
-        val selectQuery = "SELECT * FROM " + Constants.TABLE_NAME + " WHERE ${Constants.C_NAME} LIKE'% $query"
+        val selectQuery = "SELECT * FROM " + Constants.TABLE_NAME + " WHERE ${Constants.C_NAME} LIKE '%$query%'"
 
         val db = this.writableDatabase
         val cursor = db.rawQuery(selectQuery, null)
@@ -97,7 +97,7 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
                     ""+cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP)),
+                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
 
                     )
 

@@ -6,6 +6,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,11 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
 
     private var context:Context?=null
     private var recordList:ArrayList<ModelRecord>?=null
+
+    constructor(context: Context?, recordList: ArrayList<ModelRecord>?) :this(){
+        this.context = context
+        this.recordList = recordList
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderRecord {
         return HolderRecord(
@@ -52,7 +58,7 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
         holder.itemView.setOnClickListener(){
             val intent = Intent(context, RecordDetailActivity::class.java)
             intent.putExtra("RECORD_ID", id)
-            context.startActivities(intent)
+            context!!.startActivity(intent)
         }
 
         holder.moreBtn.setOnClickListener{
@@ -67,7 +73,7 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
         var phoneTv:TextView = itemView.findViewById(R.id.phoneTv)
         var emailTv:TextView = itemView.findViewById(R.id.emailTv)
         var dobTv:TextView = itemView.findViewById(R.id.dobTv)
-        var moreBtn:TextView = itemView.findViewById(R.id.moreBtn)
+        var moreBtn:ImageButton = itemView.findViewById(R.id.moreBtn)
 
     }
 }
