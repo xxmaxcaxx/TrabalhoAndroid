@@ -33,11 +33,15 @@ class AddUpdateRecordActivity : AppCompatActivity() {
 
     private var imageUri:Uri? = null
     private var name:String? = ""
+    private var id:String? = ""
     private var phone:String? = ""
-    private var email:String = ""
-    private var dob:String = ""
-    private var bio:String = ""
+    private var email:String? = ""
+    private var dob:String? = ""
+    private var bio:String? = ""
+    private var addTime:String? = ""
+    private var updateTime:String? = ""
 
+    private var isEditMode = false
 
     //actionbar
     private var actionBar:ActionBar? = null;
@@ -53,6 +57,35 @@ class AddUpdateRecordActivity : AppCompatActivity() {
 
         actionBar!!.setDisplayHomeAsUpEnabled(true)
         actionBar!!.setDisplayShowHomeEnabled(true)
+
+        val intent = intent
+        isEditMode = intent.getBooleanExtra("isEditMOde", false)
+        if (isEditMode){
+            actionBar!!.title = "Update Record"
+
+            id = intent.getStringExtra("ID")
+            name = intent.getStringExtra("NAME")
+            phone = intent.getStringExtra("PHONE")
+            email = intent.getStringExtra("EMAIL")
+            dob = intent.getStringExtra("DOB")
+            bio = intent.getStringExtra("BIO")
+            imageUri = Uri.parse(intent.getStringExtra("IMAGE"))
+            addTime = intent.getStringExtra("ADDED_TIME")
+            updateTime = intent.getStringExtra("UPDATE_TIME")
+
+            if (imageUri.toString() == null){
+                profileIv.setImageResource(R.drawable.ic_person_black)
+            } else{
+                profileIv.setImageURI(imageUri)
+            }
+            nameEt.setText(name)
+            phoneEt.setText(phone)
+            emailEt.setText(email)
+            dobEt.setText(dob)
+            bioEt.setText(bio)
+        }else{
+            actionBar!!.title = "Add Record"
+        }
 
         dbHelper = MyDbHelper(this)
 
@@ -78,19 +111,40 @@ class AddUpdateRecordActivity : AppCompatActivity() {
         dob = ""+dobEt.text.toString().trim()
         bio = ""+bioEt.text.toString().trim()
 
-        val timestamp = System.currentTimeMillis()
-        val id = dbHelper.insertRecord(
-            ""+name,
-            ""+imageUri,
-            ""+bio,
-            ""+phone,
-            ""+email,
-            ""+dob,
-            ""+timestamp,
-            ""+timestamp
-        )
-        Toast.makeText(this, "Record added against ID $id", Toast.LENGTH_SHORT).show()
-        finish()
+        if (isEditMode){
+
+            val timeStamp = "${System.currentTimeMillis()}"
+            dbHelper?.updateRecord(
+                "$id",
+                "$name",
+                "$imageUri",
+                "$bio",
+                "$phone",
+                "$email",
+                "$dob",
+                "$addTime",
+                "$timeStamp"
+            )
+
+            Toast.makeText(this,"Updated...", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            val timestamp = System.currentTimeMillis()
+            val id = dbHelper.insertRecord(
+                ""+name,
+                ""+imageUri,
+                ""+bio,
+                ""+phone,
+                ""+email,
+                ""+dob,
+                ""+timestamp,
+                ""+timestamp
+            )
+            Toast.makeText(this, "Record added against ID $id", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
+
     }
 
     private fun imagePickDialog() {

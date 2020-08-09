@@ -47,6 +47,34 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
         return id
     }
 
+    fun updateRecord(id:String,
+                     name: String?,
+                     image: String?,
+                     bio: String?,
+                     phone: String?,
+                     email: String?,
+                     dob: String?,
+                     addedTime: String?,
+                     updatedTime: String?):Long{
+
+        val db = this.writableDatabase
+        val values = ContentValues()
+
+        values.put(Constants.C_NAME, name)
+        values.put(Constants.C_IMAGE, image)
+        values.put(Constants.C_BIO, bio)
+        values.put(Constants.C_PHONE, phone)
+        values.put(Constants.C_EMAIL, email)
+        values.put(Constants.C_DOB, dob)
+        values.put(Constants.C_ADDED_TIMESTAMP, addedTime)
+        values.put(Constants.C_UPDATE_TIMESTAMP, updatedTime)
+
+        return db.update(Constants.TABLE_NAME,
+        values,
+        "${Constants.C_ID}=?",
+        arrayOf(id)).toLong()
+    }
+
     fun getAllRecords(orderBy:String):ArrayList<ModelRecord>{
         val recordList = ArrayList<ModelRecord>()
 

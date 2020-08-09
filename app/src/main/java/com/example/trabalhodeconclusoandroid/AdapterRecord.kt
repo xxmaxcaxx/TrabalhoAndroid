@@ -1,6 +1,8 @@
 package com.example.trabalhodeconclusoandroid
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
@@ -62,8 +64,56 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
         }
 
         holder.moreBtn.setOnClickListener{
-
+              showMoreOptions(
+                  position,
+                  id,
+                  name,
+                  phone,
+                  email,
+                  dob,
+                  bio,
+                  image,
+                  addedTime,
+                  updateTime
+              )
         }
+    }
+
+    private fun showMoreOptions(
+        position: Int,
+        id: String,
+        name: String,
+        phone: String,
+        email: String,
+        dob: String,
+        bio: String,
+        image: String,
+        addedTime: String,
+        updateTime: String
+    ) {
+        val options = arrayOf("Edit", "Delete")
+
+        val dialog:AlertDialog.Builder = AlertDialog.Builder(context)
+
+         dialog.setItems(options) { dialog, which ->
+             if (which==0){
+                 val intent = Intent(context, AddUpdateRecordActivity::class.java)
+                 intent.putExtra("ID", id)
+                 intent.putExtra("NAME", name)
+                 intent.putExtra("PHONE", phone)
+                 intent.putExtra("EMAIL", email)
+                 intent.putExtra("DOB", dob)
+                 intent.putExtra("BIO", bio)
+                 intent.putExtra("IMAGE", image)
+                 intent.putExtra("ADDED_TIME", addedTime)
+                 intent.putExtra("UPDATE_TIME", updateTime)
+                 intent.putExtra("isEditMOde", true)
+                 context!!.startActivity(intent)
+             }else{
+
+             }
+         }
+        dialog.show()
     }
 
     inner class HolderRecord(itemView: View): RecyclerView.ViewHolder(itemView) {
