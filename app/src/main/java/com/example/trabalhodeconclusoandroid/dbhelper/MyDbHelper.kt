@@ -1,9 +1,11 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.dbhelper
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.trabalhodeconclusoandroid.constants.Constants
+import com.example.trabalhodeconclusoandroid.model.ModelRecord
 
 class MyDbHelper (context: Context?):SQLiteOpenHelper(
     context,
@@ -69,7 +71,8 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
         values.put(Constants.C_ADDED_TIMESTAMP, addedTime)
         values.put(Constants.C_UPDATE_TIMESTAMP, updatedTime)
 
-        return db.update(Constants.TABLE_NAME,
+        return db.update(
+            Constants.TABLE_NAME,
         values,
         "${Constants.C_ID}=?",
         arrayOf(id)).toLong()
@@ -85,18 +88,19 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
 
         if (cursor.moveToFirst()){
             do{
-                val modelRecord = ModelRecord(
-                    ""+cursor.getInt(cursor.getColumnIndex(Constants.C_ID)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_NAME)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_IMAGE)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_BIO)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_PHONE)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
+                val modelRecord =
+                    ModelRecord(
+                        "" + cursor.getInt(cursor.getColumnIndex(Constants.C_ID)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_NAME)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_IMAGE)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_BIO)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_PHONE)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
 
-                )
+                    )
 
                 recordList.add(modelRecord)
             }while (cursor.moveToNext())
@@ -116,16 +120,17 @@ class MyDbHelper (context: Context?):SQLiteOpenHelper(
 
         if (cursor.moveToFirst()){
             do{
-                val modelRecord = ModelRecord(
-                    ""+cursor.getInt(cursor.getColumnIndex(Constants.C_ID)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_NAME)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_IMAGE)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_BIO)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_PHONE)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
-                    ""+cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
+                val modelRecord =
+                    ModelRecord(
+                        "" + cursor.getInt(cursor.getColumnIndex(Constants.C_ID)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_NAME)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_IMAGE)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_BIO)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_PHONE)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_EMAIL)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_DOB)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_ADDED_TIMESTAMP)),
+                        "" + cursor.getString(cursor.getColumnIndex(Constants.C_UPDATE_TIMESTAMP))
 
                     )
 

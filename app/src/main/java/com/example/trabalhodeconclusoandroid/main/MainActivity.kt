@@ -1,4 +1,4 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,17 @@ import android.view.MenuItem
 import android.widget.SearchView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.trabalhodeconclusoandroid.*
+import com.example.trabalhodeconclusoandroid.adapter.AdapterRecord
+import com.example.trabalhodeconclusoandroid.constants.Constants
+import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
+import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var dbHelper:MyDbHelper
+    lateinit var dbHelper: MyDbHelper
 
     private var NEWEST_FIRST = "${Constants.C_ADDED_TIMESTAMP} DESC"
     private var OLDEST_FIRST = "${Constants.C_ADDED_TIMESTAMP} ASC"
@@ -24,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        dbHelper = MyDbHelper(this)
+        dbHelper =
+            MyDbHelper(this)
 
         loadRecords(NEWEST_FIRST)
 
@@ -37,13 +43,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadRecords(orderBy:String) {
         recentSortOrder = orderBy;
-        val adapterRecord = AdapterRecord(this, dbHelper.getAllRecords((orderBy)))
+        val adapterRecord =
+            AdapterRecord(
+                this,
+                dbHelper.getAllRecords((orderBy))
+            )
 
         recordsRv.adapter = adapterRecord
     }
 
     private fun searchRecords(query:String) {
-        val adapterRecord = AdapterRecord(this, dbHelper.searchRecords(query))
+        val adapterRecord =
+            AdapterRecord(
+                this,
+                dbHelper.searchRecords(query)
+            )
 
         recordsRv.adapter = adapterRecord
     }
@@ -102,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        if(id==R.id.action_sort){
+        if(id== R.id.action_sort){
             sortDialog()
         }
         return super.onOptionsItemSelected(item)

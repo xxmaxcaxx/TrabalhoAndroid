@@ -1,9 +1,12 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.record
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
+import com.example.trabalhodeconclusoandroid.R
+import com.example.trabalhodeconclusoandroid.constants.Constants
+import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import kotlinx.android.synthetic.main.activity_record_detail.*
 import java.util.*
 
@@ -11,7 +14,7 @@ class RecordDetailActivity : AppCompatActivity() {
 
     private var actionBar:ActionBar?=null
 
-    private var dbHelper:MyDbHelper?=null
+    private var dbHelper: MyDbHelper?=null
 
     private var recordId:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,8 @@ class RecordDetailActivity : AppCompatActivity() {
         actionBar!!.setDisplayShowHomeEnabled(true)
         actionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        dbHelper = MyDbHelper(this)
+        dbHelper =
+            MyDbHelper(this)
 
         val intent = intent
         recordId = intent.getStringExtra("RECORD_ID")

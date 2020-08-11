@@ -1,4 +1,4 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.record
 
 import android.app.Activity
 import android.content.ContentValues
@@ -12,12 +12,12 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat
+import com.example.trabalhodeconclusoandroid.R
+import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_add_update_record.*
-import java.util.jar.Manifest
 
 class AddUpdateRecordActivity : AppCompatActivity() {
 
@@ -46,7 +46,7 @@ class AddUpdateRecordActivity : AppCompatActivity() {
     //actionbar
     private var actionBar:ActionBar? = null;
 
-    lateinit var dbHelper:MyDbHelper
+    lateinit var dbHelper: MyDbHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_update_record)
@@ -87,7 +87,8 @@ class AddUpdateRecordActivity : AppCompatActivity() {
             actionBar!!.title = "Add Record"
         }
 
-        dbHelper = MyDbHelper(this)
+        dbHelper =
+            MyDbHelper(this)
 
         cameraPermissions = arrayOf(
             android.Manifest.permission.CAMERA,
@@ -148,7 +149,9 @@ class AddUpdateRecordActivity : AppCompatActivity() {
     }
 
     private fun imagePickDialog() {
-        val options = arrayOf(getString(R.string.Camera), getString(R.string.Gallery))
+        val options = arrayOf(getString(R.string.Camera), getString(
+            R.string.Gallery
+        ))
         val builder =  AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.PickImageFrom))
         builder.setItems(options){dialog, which ->

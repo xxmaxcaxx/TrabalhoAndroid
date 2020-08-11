@@ -14,4 +14,9 @@
     <string name="PickImageFrom">Pick Image From</string>
     <string name="Camera">Camera</string>
     <string name="Gallery">Gallery</string>
+    <string name="Password">Password</string>
+    <string name="Log_in_button">Log in</string>
+    <string name="Not_have_an_account">Not have an account yet? create one</string>
+    <string name="New_user">New User</string>
+    <string name="Create_account_button">Create Account</string>
 </resources>

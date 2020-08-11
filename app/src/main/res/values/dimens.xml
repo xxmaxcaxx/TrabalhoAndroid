@@ -13,4 +13,8 @@
     <dimen name="etNamePadding">10dp</dimen>
     <dimen name="RectRadius">3dp</dimen>
     <dimen name="RectWidth">1dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="icon_header_size">24dp</dimen>
+    <dimen name="icon_header_margin">8dp</dimen>
 </resources>

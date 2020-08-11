@@ -1,4 +1,4 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.constants
 
 object Constants {
     const val DB_NAME = "MY_RECORDS_DB"

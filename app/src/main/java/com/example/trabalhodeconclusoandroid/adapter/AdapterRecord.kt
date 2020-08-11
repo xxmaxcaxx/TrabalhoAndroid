@@ -1,8 +1,7 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.adapter
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
@@ -12,6 +11,12 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.trabalhodeconclusoandroid.*
+import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
+import com.example.trabalhodeconclusoandroid.main.MainActivity
+import com.example.trabalhodeconclusoandroid.model.ModelRecord
+import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
+import com.example.trabalhodeconclusoandroid.record.RecordDetailActivity
 
 class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
 
@@ -24,7 +29,8 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
         this.context = context
         this.recordList = recordList
 
-        ddbHelper = MyDbHelper(context)
+        ddbHelper =
+            MyDbHelper(context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderRecord {

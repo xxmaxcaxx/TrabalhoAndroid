@@ -1,4 +1,4 @@
-package com.example.trabalhodeconclusoandroid
+package com.example.trabalhodeconclusoandroid.model
 
 class ModelRecord (
         var id:String,

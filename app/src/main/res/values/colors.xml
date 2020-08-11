@@ -6,4 +6,5 @@
     <color name="CircularImageColorGray">#e4e4e4</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
+    <color name="background_splash">#FFFFFF</color>
 </resources>

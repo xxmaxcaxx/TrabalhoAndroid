@@ -15,4 +15,9 @@
     <string name="PickImageFrom">"Escolher Imagem da "</string>
     <string name="Camera">Camera</string>
     <string name="Gallery">Galeria</string>
+    <string name="Password">Senha</string>
+    <string name="Log_in_button">Entrar</string>
+    <string name="Not_have_an_account">Ainda não tem uma conta? Crie uma</string>
+    <string name="New_user">Novo Usuário</string>
+    <string name="Create_account_button">Criar Conta</string>
 </resources>
