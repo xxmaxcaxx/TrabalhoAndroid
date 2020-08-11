@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,13 +15,18 @@ class MainActivity : AppCompatActivity() {
     lateinit var dbHelper:MyDbHelper
 
     private var NEWEST_FIRST = "${Constants.C_ADDED_TIMESTAMP} DESC"
+    private var OLDEST_FIRST = "${Constants.C_ADDED_TIMESTAMP} ASC"
+    private var TITLE_ASC = "${Constants.C_NAME} ASC"
+    private var TITLE_DESC = "${Constants.C_NAME} DESC"
+
+    private var recentSortOrder = NEWEST_FIRST
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         dbHelper = MyDbHelper(this)
 
-        loadRecords()
+        loadRecords(NEWEST_FIRST)
 
         addRecordBtn.setOnClickListener {
             val intent = Intent(this, AddUpdateRecordActivity::class.java)
@@ -29,8 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadRecords() {
-        val adapterRecord = AdapterRecord(this, dbHelper.getAllRecords((NEWEST_FIRST)))
+    private fun loadRecords(orderBy:String) {
+        recentSortOrder = orderBy;
+        val adapterRecord = AdapterRecord(this, dbHelper.getAllRecords((orderBy)))
 
         recordsRv.adapter = adapterRecord
     }
@@ -40,9 +47,29 @@ class MainActivity : AppCompatActivity() {
 
         recordsRv.adapter = adapterRecord
     }
-    override fun onResume() {
+
+    private fun sortDialog(){
+        val options = arrayOf("Title Ascending", "Tittle Descending", "Newest", "Oldest")
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Sort by")
+            .setItems(options){_, which ->
+                if(which==0){
+                   loadRecords(TITLE_ASC)
+                } else if(which==1){
+                    loadRecords(TITLE_DESC)
+                } else if(which==2){
+                    loadRecords(NEWEST_FIRST)
+                } else if(which==3){
+                    loadRecords(OLDEST_FIRST)
+                }
+            }
+            .show()
+    }
+
+    public override fun onResume() {
         super.onResume()
-        loadRecords()
+        loadRecords(recentSortOrder)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,6 +101,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if(id==R.id.action_sort){
+            sortDialog()
+        }
         return super.onOptionsItemSelected(item)
     }
 }

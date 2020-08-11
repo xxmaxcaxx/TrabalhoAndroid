@@ -18,9 +18,13 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
     private var context:Context?=null
     private var recordList:ArrayList<ModelRecord>?=null
 
+    lateinit var ddbHelper: MyDbHelper
+
     constructor(context: Context?, recordList: ArrayList<ModelRecord>?) :this(){
         this.context = context
         this.recordList = recordList
+
+        ddbHelper = MyDbHelper(context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderRecord {
@@ -110,6 +114,10 @@ class AdapterRecord() : RecyclerView.Adapter<AdapterRecord.HolderRecord>() {
                  intent.putExtra("isEditMOde", true)
                  context!!.startActivity(intent)
              }else{
+
+                 ddbHelper.deleteRecord(id)
+
+                 (context as MainActivity)!!.onResume()
 
              }
          }
