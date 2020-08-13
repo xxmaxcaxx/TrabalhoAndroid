@@ -12,6 +12,7 @@ import com.example.trabalhodeconclusoandroid.adapter.AdapterRecord
 import com.example.trabalhodeconclusoandroid.constants.Constants
 import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -39,6 +40,34 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("isEditMOde", false)
             startActivity(intent)
         }
+
+        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+    }
+
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        var itemId = item.itemId
+        val tag = itemId.toString()
+        var fragment = supportFragmentManager.findFragmentByTag(tag) ?: when (itemId) {
+            R.id.navigation_home -> {
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_dashboard -> {
+                /*val intent = Intent(this, MapsActivity::class.java)
+                startActivity(intent)*/
+            }
+            R.id.navigation_notifications -> {
+                /*val intent = Intent(this, MapsActivity::class.java)
+                startActivity(intent)*/
+            }
+            R.id.navigation_signout -> {
+                /*val intent = Intent(this, MapsActivity::class.java)
+                startActivity(intent)*/
+            }
+            else -> {
+                null
+            }
+        }
+        true
     }
 
     private fun loadRecords(orderBy:String) {
