@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Trabalho de conclusão Android</string>
+    <string name="app_name">Movies App</string>
     <string name="Name">Name</string>
     <string name="Insert">Insert</string>
     <string name="Cancel">Cancel</string>
@@ -19,4 +19,5 @@
     <string name="Not_have_an_account">Not have an account yet? create one</string>
     <string name="New_user">New User</string>
     <string name="Create_account_button">Create Account</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

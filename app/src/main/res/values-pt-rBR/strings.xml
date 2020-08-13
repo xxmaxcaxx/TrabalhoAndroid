@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Trabalho de conclusão Android</string>
+    <string name="app_name">Filmes App</string>
     <string name="Name">Nome</string>
     <string name="Insert">Inserir</string>
     <string name="Cancel">Cancelar</string>
@@ -20,4 +20,5 @@
     <string name="Not_have_an_account">Ainda não tem uma conta? Crie uma</string>
     <string name="New_user">Novo Usuário</string>
     <string name="Create_account_button">Criar Conta</string>
+    <string name="title_activity_maps">Mapa</string>
 </resources>
