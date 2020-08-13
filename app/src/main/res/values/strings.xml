@@ -8,8 +8,8 @@
     <string name="Name_empty">The name is empty.</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
-    <string name="DOB">DOB dd/mm/yyyy</string>
-    <string name="short_description">Short Description</string>
+    <string name="RDO">" Release date of movie (dd/mm/yyyy)"</string>
+    <string name="short_description">Short Description description about the film</string>
     <string name="AddRecord">Add Record</string>
     <string name="PickImageFrom">Pick Image From</string>
     <string name="Camera">Camera</string>
@@ -20,4 +20,21 @@
     <string name="New_user">New User</string>
     <string name="Create_account_button">Create Account</string>
     <string name="title_activity_maps">Map</string>
+    <string name="name_film">Film\'s name</string>
+    <string name="movie_genre">Movie genre</string>
+    <string name="Movie_length">Movie length</string>
+    <string name="Developed_by">Developed by:</string>
+    <string name="Application_Version">Application Version:</string>
+    <string name="version_app">1.0</string>
+    <string name="developer_name">Fernando Henry Hruschka</string>
+    <string name="home">Home</string>
+    <string name="maps">Maps</string>
+    <string name="about_the_app">About the app</string>
+    <string name="exit_the_app">Exit the app</string>
+    <string name="want_to_exit_the_application">Do you want to exit the application?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="LoginError">The email and password field cannot be empty</string>
+    <string name="AddUpdateError">" The name, gender, duration and release date fields cannot be empty"</string>
+    <string name="RDO2">Release date of movie</string>
 </resources>

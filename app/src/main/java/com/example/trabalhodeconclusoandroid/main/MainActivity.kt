@@ -9,11 +9,13 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.component1
 import com.example.trabalhodeconclusoandroid.*
+import com.example.trabalhodeconclusoandroid.abaout.AboutActivity
 import com.example.trabalhodeconclusoandroid.adapter.AdapterRecord
 import com.example.trabalhodeconclusoandroid.constants.Constants
 import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
+import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -55,23 +57,24 @@ class MainActivity : AppCompatActivity() {
         var fragment = supportFragmentManager.findFragmentByTag(tag) ?: when (itemId) {
             R.id.navigation_home -> {
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_maps
+            -> {
                 val intent = Intent(applicationContext, MapsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.navigation_notifications -> {
-                /*val intent = Intent(this, MapsActivity::class.java)
-                startActivity(intent)*/
+            R.id.navigation_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
             }
             R.id.navigation_signout -> {
-                /*val intent = Intent(this, MapsActivity::class.java)
-                startActivity(intent)*/
+                val intent = Intent(this, LogoutActivity::class.java)
+                startActivity(intent)
             }
             else -> {
                 null
             }
         }
-        true
+        false
     }
 
     private fun loadRecords(orderBy:String) {

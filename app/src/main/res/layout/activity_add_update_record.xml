@@ -31,28 +31,28 @@
     android:padding="@dimen/etNamePadding"/>
 
     <EditText
-    android:id="@+id/phoneEt"
+    android:id="@+id/genreEt"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@id/nameEt"
     android:layout_marginTop="@dimen/etNameMarginTop"
     android:layout_marginEnd="@dimen/etNameMarginEnd"
     android:layout_marginStart="@dimen/etNameMarginStart"
-    android:hint="@string/phone"
-    android:inputType="phone"
+    android:hint="@string/movie_genre"
+        android:inputType="textPersonName|textCapWords"
         android:background="@drawable/shape_rect"
     android:padding="@dimen/etNamePadding"/>
 
     <EditText
-    android:id="@+id/emailEt"
+    android:id="@+id/lenghtEt"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@id/phoneEt"
+    android:layout_below="@id/genreEt"
     android:layout_marginTop="@dimen/etNameMarginTop"
     android:layout_marginEnd="@dimen/etNameMarginEnd"
     android:layout_marginStart="@dimen/etNameMarginStart"
-    android:hint="@string/email"
-    android:inputType="textEmailAddress"
+    android:hint="@string/Movie_length"
+        android:inputType="textPersonName|textCapWords"
         android:background="@drawable/shape_rect"
     android:padding="@dimen/etNamePadding"/>
 
@@ -60,11 +60,12 @@
         android:id="@+id/dobEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emailEt"
+        android:layout_below="@id/lenghtEt"
         android:layout_marginTop="@dimen/etNameMarginTop"
         android:layout_marginEnd="@dimen/etNameMarginEnd"
         android:layout_marginStart="@dimen/etNameMarginStart"
-        android:hint="@string/DOB"
+        android:hint="@string/RDO"
+        android:inputType="date"
         android:background="@drawable/shape_rect"
         android:padding="@dimen/etNamePadding"/>
 

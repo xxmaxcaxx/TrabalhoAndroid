@@ -79,8 +79,8 @@ class AddUpdateRecordActivity : AppCompatActivity() {
                 profileIv.setImageURI(imageUri)
             }
             nameEt.setText(name)
-            phoneEt.setText(phone)
-            emailEt.setText(email)
+            genreEt.setText(phone)
+            lenghtEt.setText(email)
             dobEt.setText(dob)
             bioEt.setText(bio)
         }else{
@@ -101,14 +101,18 @@ class AddUpdateRecordActivity : AppCompatActivity() {
         }
 
         saveBtn.setOnClickListener {
-            inputData()
+            if(nameEt.text.toString() != "" && genreEt.text.toString() != "" && lenghtEt.text.toString() != "" && dobEt.text.toString() != "") {
+                inputData()
+            } else {
+                Toast.makeText(this, getResources().getString(R.string.AddUpdateError), Toast.LENGTH_LONG).show()
+            }
         }
     }
 
     private fun inputData() {
         name = ""+nameEt.text.toString().trim()
-        phone = ""+phoneEt.text.toString().trim()
-        email = ""+emailEt.text.toString().trim()
+        phone = ""+genreEt.text.toString().trim()
+        email = ""+lenghtEt.text.toString().trim()
         dob = ""+dobEt.text.toString().trim()
         bio = ""+bioEt.text.toString().trim()
 

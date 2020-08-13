@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.trabalhodeconclusoandroid.R
+import com.example.trabalhodeconclusoandroid.abaout.AboutActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
+import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -56,15 +58,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val intent = Intent(this, MainActivity::class.java)
                startActivity(intent)
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_maps -> {
             }
-            R.id.navigation_notifications -> {
-                /*val intent = Intent(this, MapsActivity::class.java)
-                startActivity(intent)*/
+            R.id.navigation_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
             }
             R.id.navigation_signout -> {
-                /*val intent = Intent(this, MapsActivity::class.java)
-                startActivity(intent)*/
+                val intent = Intent(this, LogoutActivity::class.java)
+                startActivity(intent)
             }
             else -> {
                 null

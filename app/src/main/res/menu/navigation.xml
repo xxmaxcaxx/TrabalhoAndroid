@@ -4,21 +4,21 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_white"
-        android:title="Home"/>
+        android:title="@string/home"/>
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_maps"
         android:icon="@drawable/ic_map_white"
-        android:title="Maps"/>
+        android:title="@string/maps"/>
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_about"
         android:icon="@drawable/ic_assignment_white"
-        android:title="About the app"/>
+        android:title="@string/about_the_app"/>
 
     <item
         android:id="@+id/navigation_signout"
         android:icon="@drawable/ic_exit_to_app_white"
-        android:title="Exit the app"/>
+        android:title="@string/exit_the_app"/>
 
 </menu>

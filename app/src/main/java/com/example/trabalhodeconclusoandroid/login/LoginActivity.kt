@@ -22,16 +22,22 @@ class LoginActivity : AppCompatActivity() {
             goToHome()
         }
         btLogin.setOnClickListener {
-            mAuth.signInWithEmailAndPassword(
-                inputLoginEmail.text.toString(),
-                inputLoginPassword.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    goToHome()
-                } else {
-                    Toast.makeText(this@LoginActivity, it.exception?.message,
-                        Toast.LENGTH_SHORT).show()
+            if(inputLoginEmail.text.toString() != "" && inputLoginPassword.text.toString() != "") {
+                mAuth.signInWithEmailAndPassword(
+                    inputLoginEmail.text.toString(),
+                    inputLoginPassword.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        goToHome()
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity, it.exception?.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                 }
+            }else{
+                Toast.makeText(this, getResources().getString(R.string.LoginError), Toast.LENGTH_LONG).show()
             }
         }
         btSignup.setOnClickListener {

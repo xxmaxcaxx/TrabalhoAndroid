@@ -7,4 +7,6 @@
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
     <color name="background_splash">#FFFFFF</color>
+    <color name="backgroun_btnYes">#4CAF50</color>
+    <color name="backgroun_btnNo">#E10707</color>
 </resources>

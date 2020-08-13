@@ -9,8 +9,8 @@
     <string name="Name_empty">Nome está vazio.</string>
     <string name="phone">Celular</string>
     <string name="email">Email</string>
-    <string name="DOB">Aniversario dd/mm/yyyy</string>
-    <string name="short_description">Breve descrição</string>
+    <string name="RDO">Data de lançamento (dd/mm/yyyy)</string>
+    <string name="short_description">Breve descrição sobre o filme</string>
     <string name="AddRecord">Adicionar foto</string>
     <string name="PickImageFrom">"Escolher Imagem da "</string>
     <string name="Camera">Camera</string>
@@ -21,4 +21,21 @@
     <string name="New_user">Novo Usuário</string>
     <string name="Create_account_button">Criar Conta</string>
     <string name="title_activity_maps">Mapa</string>
+    <string name="name_film">Nome do filme</string>
+    <string name="movie_genre">Gênero do filme</string>
+    <string name="Movie_length">Duração do filme</string>
+    <string name="Developed_by">Desenvolvido por:</string>
+    <string name="Application_Version">Versão do app:</string>
+    <string name="version_app">1.0</string>
+    <string name="developer_name">Fernando Henry Hruschka</string>
+    <string name="home">Home</string>
+    <string name="maps">Mapa</string>
+    <string name="about_the_app">Sobre o app</string>
+    <string name="exit_the_app">Sair do app</string>
+    <string name="want_to_exit_the_application">Você quer sair do aplicativo?</string>
+    <string name="Yes">Sim</string>
+    <string name="No">Não</string>
+    <string name="LoginError">" Os campos de e-mail e senha não podem estar vazios"</string>
+    <string name="AddUpdateError">" Os campos nome, genero, duração e data do lançamento  não podem estar vazios!"</string>
+    <string name="RDO2">Data de lançamento</string>
 </resources>
