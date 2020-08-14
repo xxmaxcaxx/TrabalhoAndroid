@@ -20,6 +20,7 @@ import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
 import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,6 +38,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        sendDataToAnalytics()
 
         dbHelper =
             MyDbHelper(this)
@@ -47,11 +49,17 @@ class MainActivity : BaseActivity() {
             val intent = Intent(this, AddUpdateRecordActivity::class.java)
             intent.putExtra("isEditMOde", false)
             startActivity(intent)
+            sendDataToAnalytics()
         }
 
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         navigation.getMenu().getItem(0).setChecked(true)
 
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

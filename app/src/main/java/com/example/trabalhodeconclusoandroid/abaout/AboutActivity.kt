@@ -8,6 +8,7 @@ import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,6 +18,11 @@ class AboutActivity : BaseActivity() {
         setContentView(R.layout.activity_about)
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         navigation.getMenu().getItem(2).setChecked(true)
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

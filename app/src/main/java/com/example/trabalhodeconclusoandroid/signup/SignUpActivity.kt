@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.model.User
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -24,6 +25,7 @@ class SignUpActivity : BaseActivity() {
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     saveInRealTimeDatabase()
+                    sendDataToAnalytics()
                 } else {
                     Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
                     Toast.makeText(this@SignUpActivity, it.exception?.message,
@@ -33,6 +35,12 @@ class SignUpActivity : BaseActivity() {
             }
         }
     }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
+    }
+
     private fun saveInRealTimeDatabase() {
         val user = User(inputName.text.toString(), inputEmail.text.toString(),
             inputPhone.text.toString())

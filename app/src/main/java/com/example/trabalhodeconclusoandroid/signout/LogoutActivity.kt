@@ -10,6 +10,7 @@ import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.signup.SignUpActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -26,13 +27,20 @@ class LogoutActivity : BaseActivity() {
         mAuth = FirebaseAuth.getInstance()
         btnYes.setOnClickListener {
             logout()
+            sendDataToAnalytics()
         }
         btnNo.setOnClickListener {
             goHome()
+            sendDataToAnalytics()
         }
 
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         navigation.getMenu().getItem(3).setChecked(true)
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private fun logout(){

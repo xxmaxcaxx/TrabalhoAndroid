@@ -12,6 +12,7 @@ import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.login.LoginActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity() {
@@ -20,7 +21,14 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         carregar()
+        sendDataToAnalytics()
     }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
+    }
+
     private fun carregar() {
 //Carrega a animacao
         val anim = AnimationUtils.loadAnimation(this, R.anim.animacao_splash)

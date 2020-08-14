@@ -16,6 +16,8 @@ import androidx.core.content.ContextCompat
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_add_update_record.*
@@ -108,6 +110,17 @@ class AddUpdateRecordActivity : BaseActivity() {
                 Toast.makeText(this, getResources().getString(R.string.AddUpdateError), Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id)
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name)
+        bundle.putString("genero do filme", phone)
+        bundle.putString("Duração do filme", email)
+        bundle.putString("Lançamento", dob)
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image")
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private fun inputData() {

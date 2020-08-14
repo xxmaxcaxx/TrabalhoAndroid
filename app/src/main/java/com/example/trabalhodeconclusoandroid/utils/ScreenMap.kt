@@ -30,6 +30,7 @@ class ScreenMap {
         }
         return ""
     }
+
     private fun getScreenNames(): Map<String, String> {
         return mapOf(
             //Login

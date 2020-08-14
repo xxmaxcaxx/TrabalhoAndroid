@@ -8,6 +8,7 @@ import com.example.trabalhodeconclusoandroid.abaout.AboutActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -49,6 +50,11 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         val CinemarkCidadeSãoPaulo = LatLng(-23.5636079, -46.652628)
         mMap.addMarker(MarkerOptions().position(CinemarkCidadeSãoPaulo).title("Cinemark Shopping Cidade São Paulo"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CinemarkCidadeSãoPaulo, 16f))
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

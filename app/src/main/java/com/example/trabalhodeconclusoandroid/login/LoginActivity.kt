@@ -9,6 +9,7 @@ import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.signup.SignUpActivity
 import com.example.trabalhodeconclusoandroid.utils.BaseActivity
+import com.example.trabalhodeconclusoandroid.utils.CalculaFlexTracker
 import com.example.trabalhodeconclusoandroid.utils.DatabaseUtil
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.iid.FirebaseInstanceId
@@ -25,7 +26,7 @@ class LoginActivity : BaseActivity() {
             goToHome()
         }
         btLogin.setOnClickListener {
-//            if(inputLoginEmail.text.toString() != "" && inputLoginPassword.text.toString() != "") {
+            if(inputLoginEmail.text.toString() != "" && inputLoginPassword.text.toString() != "") {
                 mAuth.signInWithEmailAndPassword(
                     inputLoginEmail.text.toString(),
                     inputLoginPassword.text.toString()
@@ -39,15 +40,20 @@ class LoginActivity : BaseActivity() {
                         ).show()
                     }
                 }
-            /*}else{
+                    }else{
                 Toast.makeText(this, getResources().getString(R.string.LoginError), Toast.LENGTH_LONG).show()
-            }*/
+            }
         }
         btSignup.setOnClickListener {
             startActivityForResult(
                 Intent(this, SignUpActivity::class.java),
                 newUserRequestCode)
         }
+    }
+
+    private fun sendDataToAnalytics() {
+        val bundle = Bundle()
+        CalculaFlexTracker.trackEvent(this, bundle)
     }
 
     private fun goToHome() {
