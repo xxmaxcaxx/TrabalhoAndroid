@@ -15,11 +15,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_add_update_record.*
 
-class AddUpdateRecordActivity : AppCompatActivity() {
+class AddUpdateRecordActivity : BaseActivity() {
 
     //permission constants
     private val CAMERA_REQUEST_CODE = 100;

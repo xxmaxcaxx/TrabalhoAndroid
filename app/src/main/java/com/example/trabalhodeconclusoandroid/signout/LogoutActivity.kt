@@ -9,6 +9,7 @@ import com.example.trabalhodeconclusoandroid.login.LoginActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.signup.SignUpActivity
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_logout.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.navigation
 
-class LogoutActivity : AppCompatActivity() {
+class LogoutActivity : BaseActivity() {
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,14 +1,17 @@
 package com.example.trabalhodeconclusoandroid.main
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.SearchView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.component1
-import com.example.trabalhodeconclusoandroid.*
+import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.abaout.AboutActivity
 import com.example.trabalhodeconclusoandroid.adapter.AdapterRecord
 import com.example.trabalhodeconclusoandroid.constants.Constants
@@ -16,12 +19,12 @@ import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
 import com.example.trabalhodeconclusoandroid.maps.MapsActivity
 import com.example.trabalhodeconclusoandroid.record.AddUpdateRecordActivity
 import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     lateinit var dbHelper: MyDbHelper
 

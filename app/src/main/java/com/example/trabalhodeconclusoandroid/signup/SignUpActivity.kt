@@ -6,11 +6,12 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.model.User
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : BaseActivity() {
     private lateinit var mAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

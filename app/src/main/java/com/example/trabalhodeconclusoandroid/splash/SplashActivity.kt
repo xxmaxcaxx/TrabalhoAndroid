@@ -11,9 +11,10 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.login.LoginActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
     private val TEMPO_AGUARDO_SPLASHSCREEN = 3500L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

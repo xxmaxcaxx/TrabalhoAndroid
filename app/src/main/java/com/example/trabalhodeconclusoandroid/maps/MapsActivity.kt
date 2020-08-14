@@ -7,6 +7,7 @@ import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.abaout.AboutActivity
 import com.example.trabalhodeconclusoandroid.main.MainActivity
 import com.example.trabalhodeconclusoandroid.signout.LogoutActivity
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -17,7 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : BaseActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 

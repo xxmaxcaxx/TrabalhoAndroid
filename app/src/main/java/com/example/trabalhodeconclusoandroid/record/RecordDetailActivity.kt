@@ -7,10 +7,11 @@ import androidx.appcompat.app.ActionBar
 import com.example.trabalhodeconclusoandroid.R
 import com.example.trabalhodeconclusoandroid.constants.Constants
 import com.example.trabalhodeconclusoandroid.dbhelper.MyDbHelper
+import com.example.trabalhodeconclusoandroid.utils.BaseActivity
 import kotlinx.android.synthetic.main.activity_record_detail.*
 import java.util.*
 
-class RecordDetailActivity : AppCompatActivity() {
+class RecordDetailActivity : BaseActivity() {
 
     private var actionBar:ActionBar?=null
 
