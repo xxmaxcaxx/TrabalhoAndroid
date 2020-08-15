@@ -38,4 +38,13 @@
     <string name="AddUpdateError">" The name, gender, duration and release date fields cannot be empty"</string>
     <string name="RDO2">Release date of movie</string>
     <string name="com.crashlytics.useFirebaseAppId">true</string>
+    <string name="date_added">Film Added</string>
+    <string name="time_of_added">Time of added</string>
+    <string name="date_update">Film Update</string>
+    <string name="time_of_updated">Time of updated</string>
+    <string name="sort_by">Sort by</string>
+    <string name="Title_Ascending">Title Ascending</string>
+    <string name="Tittle_Descending">Tittle Descending</string>
+    <string name="Newest">Newest</string>
+    <string name="Oldest">Oldest</string>
 </resources>

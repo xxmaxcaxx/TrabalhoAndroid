@@ -39,4 +39,13 @@
     <string name="AddUpdateError">" Os campos nome, genero, duração e data do lançamento  não podem estar vazios!"</string>
     <string name="RDO2">Data de lançamento</string>
     <string name="com.crashlytics.useFirebaseAppId">true</string>
+    <string name="date_added">Filme criado em</string>
+    <string name="date_update">Filme atualizado em</string>
+    <string name="time_of_added">Data que foi adicionado</string>
+    <string name="time_of_updated">Data da atualização</string>
+    <string name="sort_by">Ordenar por</string>
+    <string name="Title_Ascending">Título Ascendente</string>
+    <string name="Tittle_Descending">Título descendente</string>
+    <string name="Newest">Mais novo</string>
+    <string name="Oldest">Mais velho</string>
 </resources>

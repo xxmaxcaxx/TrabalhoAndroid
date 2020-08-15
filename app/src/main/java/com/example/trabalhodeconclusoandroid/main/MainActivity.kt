@@ -110,10 +110,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun sortDialog(){
-        val options = arrayOf("Title Ascending", "Tittle Descending", "Newest", "Oldest")
+        val options = arrayOf(resources.getString(R.string.Title_Ascending), resources.getString(R.string.Tittle_Descending), resources.getString(R.string.Newest), resources.getString(R.string.Oldest))
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Sort by")
+        builder.setTitle(resources.getString(R.string.sort_by))
             .setItems(options){_, which ->
                 if(which==0){
                    loadRecords(TITLE_ASC)
